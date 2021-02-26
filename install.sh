@@ -52,3 +52,6 @@ dconf write /org/gnome/shell/favorite-apps "['firefox.desktop', 'org.gnome.Nauti
 
 # Cleanup
 apt-get autoremove -y
+
+# Reboot
+reboot
