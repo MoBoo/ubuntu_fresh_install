@@ -11,7 +11,7 @@ apt-get install -y curl
 # Install virtualbox guest additions
 apt-get install -y --no-install-recommends --no-install-suggests virtualbox-guest-additions-iso
 mount -o loop /usr/share/virtualbox/VBoxGuestAdditions.iso /mnt
-/mnt/VBoxGuestAdditions.run
+/mnt/VBoxLinuxAdditions.run
 umount /mnt
 
 # Install git
