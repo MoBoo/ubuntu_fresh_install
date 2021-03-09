@@ -9,6 +9,7 @@ apt upgrade -y && apt dist-upgrade -y
 apt-get install -y curl
 
 # Install virtualbox guest additions
+apt install gcc make perl
 apt install -y --no-install-recommends --no-install-suggests virtualbox-guest-additions-iso
 mount -o loop /usr/share/virtualbox/VBoxGuestAdditions.iso /mnt
 /mnt/VBoxLinuxAdditions.run
@@ -23,6 +24,9 @@ apt install -y python3-pip
 
 ## install virtualenv
 pip3 install --system virtualenv
+
+## install ipython
+pip3 install --system ipython
 
 # Install docker
 apt install -y apt-transport-https ca-certificates gnupg-agent software-properties-common
@@ -52,6 +56,7 @@ dconf write /org/gnome/shell/favorite-apps "['firefox.desktop', 'org.gnome.Nauti
 
 # Cleanup
 apt autoremove -y
+apt clean -y
 
 # Reboot
 reboot
