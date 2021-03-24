@@ -5,6 +5,7 @@ set -ex
 # Updates
 apt update
 apt upgrade -y && apt dist-upgrade -y
+snap refresh
 
 apt install -y curl
 
