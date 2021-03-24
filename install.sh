@@ -15,8 +15,11 @@ mount -o loop /usr/share/virtualbox/VBoxGuestAdditions.iso /mnt
 
 set +ex # unset bash options, VBoxLinuxAdditions failed with error code 2, until system is rebootet.
 /mnt/VBoxLinuxAdditions.run
-set -ex # set options again.
+set -ex # re-set bash options.
 umount /mnt
+
+# add current user to 'vboxsf' group to allow shared folder access
+usermod -aG vboxsf $SUDO_USER
 
 # Install git
 apt install -y git
@@ -45,8 +48,8 @@ snap install --classic codium
 # Install Sublime Text Editor
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt update
-sudo apt install -y sublime-text
+apt update
+apt install -y sublime-text
 
 # Install PyCharm CE
 snap install --classic pycharm-community
