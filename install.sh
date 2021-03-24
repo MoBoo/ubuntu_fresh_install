@@ -59,7 +59,8 @@ snap install --classic pycharm-community
 apt install -y jq
 
 # Add Apps to favorite apps
-dconf write /org/gnome/shell/favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'codium_codium.desktop']"
+echo "Run the following command to set favorite apps:"
+echo "dconf write /org/gnome/shell/favorite-apps \"['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'codium_codium.desktop']\""
 
 # Cleanup
 apt autoremove -y
