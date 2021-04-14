@@ -42,6 +42,7 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io
 pip3 install docker-compose
+usermod -aG docker $SUDO_USER
 
 # Install VSCodium
 snap install --classic codium
