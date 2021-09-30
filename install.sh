@@ -9,16 +9,6 @@ snap refresh
 
 apt install -y curl
 
-# Install virtualbox guest additions
-apt install -y gcc make perl
-apt install -y --no-install-recommends --no-install-suggests virtualbox-guest-additions-iso
-mount -o loop /usr/share/virtualbox/VBoxGuestAdditions.iso /mnt
-
-set +ex # unset bash options, VBoxLinuxAdditions failed with error code 2, until system is rebootet.
-/mnt/VBoxLinuxAdditions.run
-set -ex # re-set bash options.
-umount /mnt
-
 # add current user to 'vboxsf' group to allow shared folder access
 usermod -aG vboxsf $SUDO_USER
 
